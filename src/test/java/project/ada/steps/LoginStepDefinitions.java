@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class LoginStepDefinitions {
+
     WebDriver driver;
     String baseUrl = "https://parabank.parasoft.com/parabank/register.htm";
 
@@ -38,4 +39,10 @@ public class LoginStepDefinitions {
         driver.findElement(By.id("accountTable")).isDisplayed();
     }
 
+    @Quando("inserir <username> e <pwd>")
+    public void inserirUsernameEPwd(String username, String pwd) {
+        driver.findElement(By.name("username")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(pwd);
+        driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input")).click();
+    }
 }

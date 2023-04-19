@@ -6,11 +6,14 @@ Funcionalidade: Login no ParaBank
     Quando inserir 'usertester' e 'pwdsenha'
     Entao login deve realizado com sucesso
 
-  Esquema do Cenario: Login usando esquema de cenário
+  Esquema do Cenário: Login com schema de cenarios
     Dado que estou na página home
-    Quando inserir <username> e <password>
+    Quando inserir <username> e <pwd>
     Entao login deve realizado com sucesso
+
     Exemplos:
-      | username     | password   | msgerro |
-      | 'usertester' | 'pwdsenha' |
-      | 'usertester' | 'pwdsenha' |
+      | username     | pwd        |
+      | "erro1"      | "pwd"      |
+      | "erro2"      | "pwd"      |
+      | "usertester" | "pwdsenha" |
+      | "erro3"      | "pwdsenha" |
