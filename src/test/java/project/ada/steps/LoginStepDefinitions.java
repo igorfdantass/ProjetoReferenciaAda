@@ -15,11 +15,10 @@ public class LoginStepDefinitions {
     WebDriver driver;
     String baseUrl = "https://parabank.parasoft.com/parabank/register.htm";
 
-    @Before
+//    @Before
     public void setup(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
     }
 

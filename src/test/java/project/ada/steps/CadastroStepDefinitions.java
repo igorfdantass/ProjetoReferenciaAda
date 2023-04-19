@@ -15,7 +15,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.net.URL;
 import java.util.List;
 
 public class CadastroStepDefinitions {
@@ -27,7 +26,6 @@ public class CadastroStepDefinitions {
     public void setup(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
     }
 
