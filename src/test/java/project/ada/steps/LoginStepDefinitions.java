@@ -1,26 +1,21 @@
 package project.ada.steps;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import project.ada.Hooks;
+
+import java.time.Duration;
 
 public class LoginStepDefinitions {
+    WebDriver driver = Hooks.getDriver();
 
-    WebDriver driver;
     String baseUrl = "https://parabank.parasoft.com/parabank/register.htm";
-
-//    @Before
-    public void setup(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
-    }
 
     @Dado("que estou na página home")
     public void que_estou_na_página_home() {
@@ -43,5 +38,27 @@ public class LoginStepDefinitions {
         driver.findElement(By.name("username")).sendKeys(username);
         driver.findElement(By.name("password")).sendKeys(pwd);
         driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input")).click();
+    }
+
+    @Quando("fazer logout")
+    public void fazer_logout() {
+        driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/ul/li[8]/a")).click();
+    }
+
+    @Entao("deve desconectar corretamente")
+    public void deve_desconectar_corretamente() {
+        String pathElement = "//*[@id=\"loginPanel\"]/form/div[3]/input";
+//        driver.manage().timeouts().implicitlyWait(10, Time );
+//        Thread.sleep();
+//        new WebDriverWait(driver, Duration.ofSeconds(10));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath(pathElement)));
+
+        Boolean isDisplayed = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(driver -> driver.findElement(
+                        By.xpath(pathElement)).isDisplayed());
+
+        Assertions.assertTrue(isDisplayed);
+        driver.findElement(By.xpath(pathElement)).isDisplayed();
+        Assertions.assertTrue(isDisplayed);
     }
 }
