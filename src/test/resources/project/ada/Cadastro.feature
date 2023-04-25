@@ -1,32 +1,28 @@
 #language: pt
 @Tasks
+@Regression
 Funcionalidade: Tasks
 
-  @Regression
   @Smoke
-  @Esse
-  Cenario: REGRESSION SMOKE Criação de task
+  Cenario: Criação de task
     Dado que usuário está na pagina inicial
     Quando inserir nova task
     Entao task deve estar na lista de tasks ativas
 
-  @Regression
-  Cenario: REGRESSION Criação de duas tasks
+  Cenario: Criação de duas tasks
     Dado que usuário está na pagina inicial
     Quando inserir nova task
     E inserir segunda task
     Entao task deve estar na lista de tasks ativas
     E segunda task também deve estar listada
 
-  @Regression
-  Cenario: REGRESSION Criação de task com variável
+  Cenario: Criação de task com variável
     Dado que usuário está na pagina inicial
     Quando inserir task 'task variável'
     Entao task deve estar na lista de tasks ativas
 
-  @Regression
   @Smoke
-  Cenario: REGRESSION SMOKE Criação de task com DataTables
+  Cenario: Criação de task com DataTables
     Dado que usuário está na pagina inicial
     Quando inserir tasks:
       | task1 |
@@ -34,11 +30,16 @@ Funcionalidade: Tasks
       | task3 |
     Entao task deve estar na lista de tasks ativas
 
-  @Regression
-  Esquema do Cenario: REGRESSION Criar diferentes tasks usando esquema de cenário
+  Esquema do Cenario: Criar diferentes tasks usando esquema de cenário
     Dado que usuário está na pagina inicial
     Quando inserir task <nomeTask>
     Entao <nomeTask> deve estar na lista de tasks ativas
+    @Smoke
+    Exemplos:
+      | nomeTask |
+      | 'task1'  |
+
+    @Regression
     Exemplos:
       | nomeTask |
       | 'task1'  |
