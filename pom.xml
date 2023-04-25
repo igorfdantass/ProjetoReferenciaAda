@@ -67,6 +67,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>3.8.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>me.jvt.cucumber</groupId>
+            <artifactId>reporting-plugin</artifactId>
+            <version>5.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
