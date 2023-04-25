@@ -1,7 +1,5 @@
 package project.ada.steps;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
@@ -11,28 +9,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeOptions;
+import project.ada.Hooks;
 
 import java.util.List;
 
 public class CadastroStepDefinitions {
 
-    WebDriver driver;
+    WebDriver driver = Hooks.getDriver();
+
     String baseUrl = "https://todomvc.com/examples/vanillajs";
-
-    @Before
-    public void setup(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
-    }
-
-    @After
-    public void tearDown(){
-        driver.quit();
-    }
 
     @Dado("que usuário está na pagina inicial")
     public void que_usuário_está_na_pagina_inicial() {
@@ -84,10 +69,6 @@ public class CadastroStepDefinitions {
 
     @Entao("{string} deve estar na lista de tasks ativas")
     public void taskDeveEstarNaListaDeTasksAtivas(List<String> tasksCriadas) {
-//        List<WebElement> elementos = driver.findElements(By.className("view"));
-//        for (String task : tasksCriadas) {
-//            //TODO
-
-//        }
+        //TODO: For aninhado
     }
 }
