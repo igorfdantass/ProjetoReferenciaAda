@@ -1,4 +1,6 @@
 #language: pt
+@Logout
+@Regression
 Funcionalidade: Logout
 
   Cenario: Logout com sucesso

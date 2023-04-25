@@ -1,0 +1,4 @@
+project\ada\RunCucumberTest.class
+project\ada\steps\LoginStepDefinitions.class
+project\ada\steps\CadastroStepDefinitions.class
+project\ada\Hooks.class

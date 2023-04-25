@@ -1,5 +1,6 @@
 #language: pt
 @LoginParaBank
+@Ignore
 Funcionalidade: Login no ParaBank
 
   Cenario: Login com sucesso

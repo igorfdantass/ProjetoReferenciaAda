@@ -39,7 +39,6 @@ Funcionalidade: Tasks
       | nomeTask |
       | 'task1'  |
 
-    @Regression
     Exemplos:
       | nomeTask |
       | 'task1'  |

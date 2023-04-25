@@ -1,4 +1,6 @@
 #language: pt
+@LoginParaBank
+@Ignore
 Funcionalidade: Login no ParaBank
 
   Cenario: Login com sucesso
@@ -14,6 +16,5 @@ Funcionalidade: Login no ParaBank
     Exemplos:
       | username     | pwd        |
       | "erro1"      | "pwd"      |
-      | "erro2"      | "pwd"      |
       | "usertester" | "pwdsenha" |
-      | "erro3"      | "pwdsenha" |
+

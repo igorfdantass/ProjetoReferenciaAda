@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.228 s - in RunCucumberTest
+Tests run: 13, Failures: 0, Errors: 1, Skipped: 10, Time elapsed: 18.489 s <<< FAILURE! - in RunCucumberTest
+Example #1.1  Time elapsed: 3.484 s  <<< ERROR!
+io.cucumber.core.exception.CucumberException: 
+Could not invoke step [{string} deve estar na lista de tasks ativas] defined at 'project.ada.steps.CadastroStepDefinitions.taskDeveEstarNaListaDeTasksAtivas(java.util.List<java.lang.String>)'.
+It appears there was a problem with the step definition.
+The converted arguments types were (java.lang.String)
+Caused by: io.cucumber.core.backend.CucumberBackendException: Failed to invoke public void project.ada.steps.CadastroStepDefinitions.taskDeveEstarNaListaDeTasksAtivas(java.util.List)
+Caused by: java.lang.IllegalArgumentException: argument type mismatch
+

@@ -68,7 +68,7 @@ public class CadastroStepDefinitions {
     }
 
     @Entao("{string} deve estar na lista de tasks ativas")
-    public void taskDeveEstarNaListaDeTasksAtivas(List<String> tasksCriadas) {
+    public void taskDeveEstarNaListaDeTasksAtivas(String taskCriada) {
         //TODO: For aninhado
     }
 }
